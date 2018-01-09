@@ -1,11 +1,11 @@
 import javax.swing.JFrame;
 
-public class Main extends JFrame
+public class MainFrame extends JFrame
 {
 
 	public static void main(String[] args) 
 	{
-		JFrame j = new JFrame("My Game");
+		JFrame j = new JFrame("Project Hex");
 		
 		try	
 		{
@@ -17,10 +17,12 @@ public class Main extends JFrame
 			System.out.println("There is no such image");
 		}
 		j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		j.setSize(1400, 1400);
+		j.setSize(1200, 767);
 		j.setVisible(true);
 		
 
 	}
+	
+	
 
 }

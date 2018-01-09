@@ -1,25 +1,42 @@
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JPanel;
+
 import java.awt.Graphics;
 
-
-
-
-public class Hexagon 
+public class Hexagon extends JPanel  
 {
-	private int _row;
-	private int _col;
-	private Condition _condition;
-	private Img _hexagonImage;
+	protected int _row;
+	protected int _col;
+	protected Condition _condition;
+	protected Img _hexagonImage;
+
 	public enum Condition {Empty,Yellow,Purple}; 
-	
+
 	public Hexagon(int r,int c)
 	{
 		_condition = Condition.Empty;
 		_row = r;
 		_col = c;
 		setHexagonImage(new Img("Images\\transparentHexagon.png",c,r,50,50));
+		
+		//mouse Listener
+		this.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mousePressed(MouseEvent e) 
+			{
+				
+				
+			}
+			
+		});
+		
+		
 	}
-	
+
 	public boolean IsEmpty()
 	{
 		if(_condition == _condition.Empty)
@@ -28,7 +45,7 @@ public class Hexagon
 		}
 		return false;
 	}
-	
+
 	public int getRow() 
 	{
 		return _row;
@@ -63,9 +80,6 @@ public class Hexagon
 	{
 		_hexagonImage = hexagonImage;
 	}
-
 	
 	
-	
-
 }
